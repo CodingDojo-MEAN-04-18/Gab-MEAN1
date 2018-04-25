@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            // Part I
+            // Create a function called starString() that takes
+            // a number and returns a string of that many *
+            function starString(n) {
+                var stars ="*";
+                return stars.repeat(n);
+            }
+
+            console.log("StarString()")
+            console.log(starString(5));
+
+            // Part II
+            // Create a function called drawStars() that takes
+            // an array of numbers and prints out *
+            // function drawStars(array) {
+            //     var stars2 = "*";
+            //     for (element of array) {
+            //         console.log(element);
+            //         console.log(stars2.repeat(element));
+            //     }
+            // }
+
+            // console.log("drawStars test 1");
+            // let myArray = [0, 3, 10];
+            // console.log(drawStars(myArray));
+            //
+            // console.log("drawStars test 2");
+            // let x = [4, 6, 1, 3, 5, 7, 25];
+            // console.log(drawStars(x));
+
+            // Part III
+            // Modify the function above. Allow an array
+            // containing integers and strings to be passed
+            // to the drawStars() function. When a string is
+            // passed, instead of displaying *, display the
+            // first letter of the string according to the
+            // example below. You may use the .toLowerCase()
+            // string method for this part.
+            function drawStars(array) {
+                for (element of array) {
+                    if (element instanceof String || typeof(element) == 'string'){
+                        console.log(element.charAt(0).toLowerCase().repeat(element.length));
+                    } else {  // assuming it's a Number
+                        console.log("*".repeat(element));
+                    }
+                }
+            }
+
+            let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"]
+            console.log("drawStars Part III");
+
+            drawStars(x);
+
+        </script>
+    </body>
+</html>
