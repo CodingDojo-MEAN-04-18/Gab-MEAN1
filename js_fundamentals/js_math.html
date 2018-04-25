@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        // This function should take an array. Return true
+        // if the input array contains no negative numbers,
+        // return false if it does.
+            function zero_negativity(array) {
+                ret = true;
+                for (element of array) {
+                    positive = Math.sign(element);
+                    if(positive != 1){
+                        ret = false;
+                    }
+                return ret;
+                }
+            }
+
+            array1 = [0, 1, 5, 10, 51];
+            array2 = [0, 0, 0];
+            array3 = [-1, 0, -3, 7];
+            array4 = [3, 9, 20];
+
+            let test1 = zero_negativity(array1);
+            console.log(test1);
+            let test2 = zero_negativity(array2);
+            console.log(test2);
+            let test3 = zero_negativity(array3);
+            console.log(test3);
+            let test4 = zero_negativity(array4);
+            console.log(test4);
+
+
+            // This function should take an number. Return true
+            // if the input number is even, return false if the
+            // number is odd.
+            function is_even(x) {
+                ret = true;
+                if (x%2 != 0) {ret = false}
+                return ret;
+            }
+
+            console.log("Is even");
+            let even1 = is_even(-1);
+            console.log(even1);
+            let even2 = is_even(0);
+            console.log(even2);
+            let even3 = is_even(1);
+            console.log(even3);
+            let even4 = is_even(8);
+            console.log(even4);
+
+            // This function should take an array. Return the
+            // total number of elements in the array that are even.
+            // You may call is_even() to solve this.
+            function how_many_even(array){
+                let count = 0;
+                for (element of array) {
+                    if (is_even(element)){ count++}
+                }
+                return count;
+            }
+
+            console.log("How many");
+            let howmany1 = how_many_even(array1);
+            console.log(howmany1);
+            let howmany2 = how_many_even(array2);
+            console.log(howmany2);
+            let howmany3 = how_many_even(array3);
+            console.log(howmany3);
+            let howmany4 = how_many_even(array4);
+            console.log(howmany4);
+
+            // This function should take a number n. Return an
+            // array of random numbers between 0 and 9 with the
+            // length of n.
+            function create_dummy_array(n){
+                let myArray = [];
+                for(i=0; i<n; i++) {
+                    newElement = Math.floor(Math.random() * 10);
+                    myArray.push(newElement);
+                }
+                return myArray;
+            }
+
+            console.log("Create dummy array");
+            let dummy1 = create_dummy_array(0);
+            console.log(dummy1);
+            let dummy2 = create_dummy_array(1);
+            console.log(dummy2);
+            let dummy3 = create_dummy_array(5);
+            console.log(dummy3);
+            let dummy4 = create_dummy_array(-1);
+            console.log(dummy4);
+
+            // This function should take an array. Return a
+            // random element of the array, based on its
+            // length. This function should never return undefined.
+            // NOTE: returns 0xFFFFFFFF if element is undefined
+            function random_choice(array) {
+                let index = Math.floor(Math.random() * array.length);
+                if(array[index] == undefined){
+                    return 0xFFFFFFFF;
+                }
+                return array[index];
+            }
+
+            console.log("Random choice");
+            let choice1 = random_choice(array1);
+            console.log(choice1);
+            let choice2 = random_choice(array2);
+            console.log(choice2);
+            let choice3 = random_choice(array3);
+            console.log(choice3);
+            let choice4 = random_choice(array4);
+            console.log(choice4);
+            let choice5 = random_choice(dummy1);
+            console.log(choice5);
+            let choice6 = random_choice(dummy2);
+            console.log(choice6);
+            let choice7 = random_choice(dummy3);
+            console.log(choice7);
+
+
+        </script>
+    </body>
+</html>
